@@ -2,7 +2,7 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Container from '@mui/material/Container';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import structures from "../data";
+import structures from "../../data";
 import Box from '@mui/material/Box';
 
 const imgData=structures.slice(0, -1);

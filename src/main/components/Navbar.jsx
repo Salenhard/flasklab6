@@ -10,7 +10,7 @@ import Drawer from '@mui/material/Drawer';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-
+import {Link} from 'react-router-dom';
 interface ComponentProps {
   active: string;
 }
@@ -36,14 +36,18 @@ function Navbar({ active } : ComponentProps) {
                   Самые высокие здания и сооружения
                 </Typography>
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                  <Button variant={active === "1" ? "contained" : "text"}
-                   color="info" size="medium">
-                    Главная
-                  </Button>
-                  <Button variant={active === "2" ? "contained" : "text"}
-                  color="info" size="medium">
-                    Список зданий
-                  </Button>
+                <Link to="/">
+                    <Button variant={active === "1" ? "contained" : "text"}
+                      color="info" size="medium">
+                      Главная
+                    </Button>
+                  </Link>
+                  <Link to="/list">
+                    <Button variant={active === "2" ? "contained" : "text"}
+                      color="info" size="medium">
+                      Список зданий
+                    </Button>
+                  </Link>
                   <Button variant={active === "3" ? "contained" : "text"}
                   color="info" size="medium">
                     Контакты
@@ -60,8 +64,12 @@ function Navbar({ active } : ComponentProps) {
                     onClose={toggleDrawer(false)}
                     >
                     <Box>
+                      <Link to="/">
                         <MenuItem selected={active === "1" ? "true" : ""}>Главная</MenuItem>
+                      </Link>
+                      <Link to="/list">
                         <MenuItem selected={active === "2" ? "true" : ""}>Список зданий</MenuItem>
+                      </Link>
                         <MenuItem selected={active === "3" ? "true" : ""}>Контакты</MenuItem>  
                     </Box>
                   </Drawer>  

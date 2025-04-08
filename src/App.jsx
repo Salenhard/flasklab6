@@ -1,16 +1,10 @@
-import Navbar from "./components/Navbar";
-import Gallery from "./components/Gallery";
-import Content from "./components/Content";
-import Footer from "./components/Footer";
+import List from "./list/List";
+
 function App() {
   return (
-    <div>
-      <Navbar active="1"/>
-      <Gallery/>
-      <Content/>
-      <Footer/>
-    </div>
+    <>
+      <List/>
+    </>
   );
 }
- 
-export default App;
+export default App
