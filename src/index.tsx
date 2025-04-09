@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
-import App from './App';
 import  List  from "./list/List";
 import  Main  from "./main/Main";
+import Building from "./building/Building"
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -18,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/list",
     element: <List />,
+  },
+  {
+    path: "/building/:id",
+    element: <Building/>,
   },
 ]);
 

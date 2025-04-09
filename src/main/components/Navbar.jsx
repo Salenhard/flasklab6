@@ -50,7 +50,7 @@ function Navbar({ active } : ComponentProps) {
                   </Link>
                   <Button variant={active === "3" ? "contained" : "text"}
                   color="info" size="medium">
-                    Контакты
+                    Диаграммы
                   </Button>
                 </Box>
                 <Box sx={{ display: { xs: 'flex', md: 'none' }}}>    
