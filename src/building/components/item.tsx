@@ -1,16 +1,16 @@
-import { Typography } from "@mui/material"
+import { Grid, Typography } from "@mui/material"
 import structures from "../../data";
 import {Link} from 'react-router-dom';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+
 const imgData=structures.slice(0, -1);
 interface ComponentProps {
     index: number;
   }
   function Item({ index }: ComponentProps) {
     return (
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{ mt:1 }}>
 
         <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
           <Link to="/" style={{ textDecoration: 'none', color: '#1976d2' }}>
@@ -23,7 +23,7 @@ interface ComponentProps {
           {imgData[index].title}
         </Typography>
   
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center' , height:500, mb:1}}>
               <img
                 srcSet={imgData[index].img}
                 src={imgData[index].img}
@@ -36,11 +36,15 @@ interface ComponentProps {
               />
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
-              {imgData[index].description.map((item, ind) => (
-                <Typography key={ind} variant="body2" color="text.primary">
-                  {item}
-                </Typography>
-              ))}
+              <Grid container spacing={0.5}>
+                {imgData[index].description.map((item, ind) => (
+                  <Grid size={{ xs: 6, md: 6 }}>
+                    <Typography key={ind} variant="body2">
+                      {item}
+                    </Typography>
+                  </Grid>
+                ))}
+              </Grid>
             </Box>
       </Container>
     );

@@ -5,6 +5,7 @@ import  List  from "./list/List";
 import  Main  from "./main/Main";
 import Building from "./building/Building"
 import reportWebVitals from './reportWebVitals';
+import Chart from './chart/Chart';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/building/:id",
     element: <Building/>,
+  },
+  {
+    path: "/chart",
+    element: <Chart/>,
   },
 ]);
 

@@ -1,5 +1,4 @@
 import Navbar from "../main/components/Navbar";
-import Footer from "../main/components/Footer";
 import Item from "./components/item";
 import { useParams } from 'react-router-dom';
 function Building() {
