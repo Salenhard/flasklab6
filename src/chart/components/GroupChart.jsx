@@ -4,9 +4,11 @@ import { LineChart } from '@mui/x-charts/LineChart';
 import { useState } from 'react'
 import { axisClasses } from '@mui/x-charts';
 import SettingChart from './SettingChart';
-import { tGroup } from '../../groupdata';
+interface GroupChartProps {
+  data: tGroup;
+}
 
-function GroupChart( data : tGroup) {
+  function GroupChart({data}: GroupChartProps) {
   const [isBar, setIsBar] = useState(true);
 
   const [series, setSeries] = useState({
@@ -42,6 +44,7 @@ function GroupChart( data : tGroup) {
           dataset={data}
           xAxis={[{ scaleType: 'band', dataKey: 'Группа' }]}
           series={seriesY}
+          barLabel={seriesY.length === 1 ? 'value' : ''}
           slotProps={{
             legend: {
               position: { vertical: 'bottom', horizontal: 'middle' },
@@ -63,7 +66,7 @@ function GroupChart( data : tGroup) {
           }}
           {...chartSetting}
         />}
-      <SettingChart series={series} setSeries={setSeries} />
+      <SettingChart series={series} setSeries={setSeries} isBar={isBar} setIsBar={setIsBar} />
     </Container>
   )
 }
