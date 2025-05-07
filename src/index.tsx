@@ -10,6 +10,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import InputHW from './InputHW/InputHW';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     path: "/chart",
     element: <Chart/>,
   },
+  {
+    path:"/input",
+    element: <InputHW/>
+  }
 ]);
 
 const root = ReactDOM.createRoot(
